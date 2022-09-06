@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+/* import React, { useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { BiMinus, BiPlus } from "react-icons/bi";
 import { AiFillHeart } from "react-icons/ai";
@@ -56,17 +56,17 @@ const DynamicProduct = (props) => {
           </div>
           <div className="  w-1/2 px-3 mt-10  xl:ml-5 xl:h-[34rem]   overflow-hidden ">
             <img
-              src={product[0].images[itemInex]}
+              src={product && product[0].images[itemInex]}
               className=" h-full w-full object-cover rounded-md"
-              alt={product[0].title}
+              alt={product && product[0].title}
             />
             <div className=" bg-gray-300 h-[0.14rem] mt-4"></div>
           </div>
           <div className="  w-1/2 mt-10 pl-6">
             <h1 className=" text-appBlack font-Poppins text-3xl">
-              {product[0].title}
+              {product && product[0].title}
             </h1>
-            <h1 className=" text-third mt-4">{product[0].price}</h1>
+            <h1 className=" text-third mt-4">{product && product[0].price}</h1>
             <div className=" w-full  xl:mt-16">
               <div className=" flex space-x-2 items-center w-full">
                 <AiFillStar />
@@ -114,12 +114,15 @@ const DynamicProduct = (props) => {
               <div className=" space-y-2 xl:mt-8">
                 <h1 className=" flex">
                   SKU:
-                  <p className=" text-secoundry ml-2">{product[0].sku}</p>
+                  <p className=" text-secoundry ml-2">
+                    {" "}
+                    {product && product[0].sku}
+                  </p>
                 </h1>
                 <h1 className=" flex">
                   Categories:
                   <p className=" text-secoundry ml-2">
-                    {product[0].categories}
+                    {product && product[0].categories}
                   </p>
                 </h1>
               </div>
@@ -167,32 +170,32 @@ const DynamicProduct = (props) => {
           </div>
           {desc && (
             <div className="  py-4">
-              <h1 className=" text-secoundry">{product[0].desc}</h1>
+              <h1 className=" text-secoundry">{product && product[0].desc}</h1>
             </div>
           )}
           {additionalInfo && (
             <div className="py-4 ">
               <h1 className="flex  py-2 text-secoundry">
                 <p className=" text-gray-800"> Weight : </p>
-                {product[0].addiInfo[0].weigth}
+                {product && product[0].addiInfo[0].weigth}
               </h1>
               <h1 className="flex py-2 text-secoundry">
                 <p className=" text-gray-800">Dimentions : </p>
-                {product[0].addiInfo[0].dimentions}
+                {product && product[0].addiInfo[0].dimentions}
               </h1>
               <h1 className="flex py-2 text-secoundry">
                 <p className=" text-gray-800">Colours : </p>
-                {product[0].addiInfo[0].colours}
+                {product && product[0].addiInfo[0].colours}
               </h1>
               <h1 className="flex py-2 text-secoundry">
                 <p className=" text-gray-800">Material : </p>
-                {product[0].addiInfo[0].material}
+                {product && product[0].addiInfo[0].material}
               </h1>
             </div>
           )}
           {review && (
             <div className="  py-10">
-              <h1 className="  text-secoundry">{product[0].desc}</h1>
+              <h1 className="  text-secoundry">{product && product[0].desc}</h1>
             </div>
           )}
         </div>
@@ -214,9 +217,11 @@ const DynamicProduct = (props) => {
         </div>
         <div className=" px-3">
           <h1 className=" font-semibold text-xl text-gray-800">
-            {product[0].title}
+            {product && product[0].title}
           </h1>
-          <h1 className=" text-third font-semibold mt-1">{product[0].price}</h1>
+          <h1 className=" text-third font-semibold mt-1">
+            {product && product[0].price}
+          </h1>
           <button>ADD to Cart</button>
           <div className=" text-sm py-4">
             {seemore ? (
@@ -231,7 +236,7 @@ const DynamicProduct = (props) => {
               </h2>
             ) : (
               <h2>
-                {smallString(product[0].desc, 175)}
+                {smallString(product && product[0].desc, 175)}
                 <p
                   className=" text-third font-bold flex items-center"
                   onClick={() => setSeemore(true)}
@@ -255,7 +260,7 @@ const DynamicProduct = (props) => {
               )}
             </div>
             <div className=" text-sm text-secoundry">
-              {!desc && product[0].desc}
+              {!desc && product && product[0].desc}
             </div>
             <div
               className=" flex items-center justify-between"
@@ -271,9 +276,13 @@ const DynamicProduct = (props) => {
             <div className=" text-sm text-secoundry">
               {additionalInfo && (
                 <div className=" space-y-2">
-                  <h2>Weight : {product[0].addiInfo[0].weigth}</h2>
-                  <h2>Dimentions : {product[0].addiInfo[0].dimentions}</h2>
-                  <h2>Material : {product[0].addiInfo[0].material}</h2>
+                  <h2>Weight : {product && product[0].addiInfo[0].weigth}</h2>
+                  <h2>
+                    Dimentions : {product && product[0].addiInfo[0].dimentions}
+                  </h2>
+                  <h2>
+                    Material : {product && product[0].addiInfo[0].material}
+                  </h2>
                 </div>
               )}
             </div>
@@ -289,7 +298,7 @@ const DynamicProduct = (props) => {
               )}
             </div>
             <div className=" text-sm text-secoundry">
-              {review && product[0].reviews}
+              {review && product && product[0].reviews}
             </div>
           </div>
         </div>
@@ -299,3 +308,12 @@ const DynamicProduct = (props) => {
 };
 
 export default DynamicProduct;
+ */
+
+import React from "react";
+
+const Dynamic = () => {
+  return <div>Dynamic</div>;
+};
+
+export default Dynamic;
