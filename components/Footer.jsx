@@ -9,7 +9,7 @@ const Footer = () => {
         <div className=" flex flex-col items-center">
           <div className=" w-2/5 md:w-1/4">
             <Image
-              src="/images/logo1.svg"
+              src="/images/logo.svg"
               width={1000}
               height={1000}
               alt="Logo"
@@ -48,7 +48,7 @@ const Footer = () => {
           <div className=" w-1/2 flex flex-grow items-center justify-between ">
             <div className=" w-1/3">
               <Image
-                src="/images/logo1.svg"
+                src="/images/logo.svg"
                 width={1000}
                 height={1000}
                 alt="Logo"

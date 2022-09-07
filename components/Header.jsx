@@ -41,7 +41,7 @@ const Header = () => {
               <Link href="/">
                 <div className=" cursor-pointer pb-4">
                   <img
-                    src="/images/logo1.svg"
+                    src="/images/logo.svg"
                     className=" text-sm w-3/4 h-3/4"
                   />
                 </div>
@@ -63,7 +63,7 @@ const Header = () => {
               <div className=" flex flex-row justify-between  items-center">
                 <Link href="/">
                   <div className=" cursor-pointer">
-                    <img src="/images/logo1.svg" className="" />
+                    <img src="/images/logo.svg" className="" />
                   </div>
                 </Link>
                 <div className=" flex flex-row justify-between gap-20">
@@ -111,7 +111,7 @@ const Header = () => {
           <div className=" lg:hidden   flex flex-row justify-between pt-5 items-center px-2 md:px-6 ">
             <Link href="/">
               <div className=" cursor-pointer pb-5">
-                <img src="/images/logo1.svg" className=" text-sm w-3/4 h-3/4" />
+                <img src="/images/logo.svg" className=" text-sm w-3/4 h-3/4" />
               </div>
             </Link>
             <div>
@@ -147,7 +147,7 @@ const Header = () => {
             <div className=" flex flex-row justify-between items-center">
               <Link href="/">
                 <div className=" cursor-pointer">
-                  <img src="/images/logo1.svg" className="" />
+                  <img src="/images/logo.svg" className="" />
                 </div>
               </Link>
               <div className=" flex flex-row justify-between gap-20">
