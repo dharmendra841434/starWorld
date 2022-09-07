@@ -1,74 +1,85 @@
+import Image from "next/image";
 import React from "react";
 import { FaTwitter, FaInstagram, FaFacebookF } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className=" py-10 mt-20">
-      <div className=" lg:hidden flex flex-col mt-5 items-center">
-        <img src="/images/logo1.svg" className="" />
-        <span className=" text-lightGray mt-8 text-center">
-          Helping you{" "}
-          <span className=" font-semibold text-lightGray">maximize</span>{" "}
-          operations management with digitization
-        </span>
-        <div className=" flex flex-col items-center mt-12">
-          <h2 className=" font-bold text-black">Office</h2>
-          <h3 className="  text-lightGray mt-3">359 Hidden Valley Road, NY</h3>
-        </div>
-        <div className=" flex flex-col items-center mt-12">
-          <h2 className=" font-bold text-black">Contacts</h2>
-          <h3 className=" text-lightGray mt-3">
-            (+01) 234 568 contact@monst.com
-          </h3>
-        </div>
-        <div className=" flex gap-5 mt-10">
-          <FaFacebookF className=" text-xl text-appBlue2 cursor-pointer transition-all duration-300 ease-out hover:text-appBlue" />
-          <FaInstagram className=" text-xl text-appBlue2 cursor-pointer transition-all duration-300 ease-out hover:text-appBlue" />
-          <FaTwitter className=" text-xl text-appBlue2 cursor-pointer transition-all duration-300 ease-out hover:text-appBlue" />
-        </div>
-        <span className=" text-lightGray text-[14px] mt-8 tracking-wide">
-          © 2022. All rights reserved. Designed by{" "}
-          <span className=" text-appBlue">StarWorld.com</span>
-        </span>
-      </div>
-      <div className=" hidden lg:block">
-        <div className="  flex flex-row justify-evenly px-6 xl:px-44">
-          <div className=" w-1/2 flex flex-row justify-between  ">
-            <div className="">
-              <img src="/images/logo1.svg" className="" />
+    <div className="">
+      <div className=" lg:hidden ">
+        <div className=" flex flex-col items-center">
+          <div className=" w-2/5 md:w-1/4">
+            <Image
+              src="/images/logo1.svg"
+              width={1000}
+              height={1000}
+              alt="Logo"
+            />
+          </div>
+          <p className=" text-lightGray mx-10 text-center">
+            Helping you maximize operations management with digitization
+          </p>
+          <div className=" my-8 ">
+            <div className=" flex flex-col items-center">
+              <h1 className=" text-appBlack font-bold text-lg">Office</h1>
+              <p className=" text-lightGray mt-2">359 Hidden Valley Road, NY</p>
             </div>
-            <div className=" w-1/2">
-              <span className="  text-lightGray">
-                Helping you{" "}
-                <span className=" font-semibold text-lightGray">maximize</span>{" "}
-                operations management with digitization
-              </span>
+            <div className=" flex flex-col items-center mt-6">
+              <h1 className=" text-appBlack font-bold text-lg">Contacts</h1>
+              <p className=" text-lightGray mt-2">
+                (+01) 234 568 contact@monst.com
+              </p>
             </div>
           </div>
-          <div className=" w-1/2 flex flex-row justify-between pl-16">
-            <div className=" w-1/2">
-              <h2 className=" font-bold text-black">Office</h2>
-              <h3 className=" w-9/12 text-lightGray mt-3">
-                359 Hidden Valley Road, NY
-              </h3>
+        </div>
+        <div className=" flex flex-col md:flex-row md:justify-between items-center md:px-6">
+          <span className=" text-lightGray text-sm text-center">
+            © 2022. All rights reserved. Designed by{" "}
+            <span className=" text-appBlue font-semibold">Alithemes.com</span>
+          </span>
+          <div className=" flex flex-row items-center gap-x-5 mt-5">
+            <FaFacebookF className=" text-appBlue cursor-pointer text-lg transition-all duration-300 ease-in-out hover:scale-125" />
+            <FaInstagram className=" text-appBlue cursor-pointer text-lg transition-all duration-300 ease-in-out hover:scale-125" />
+            <FaTwitter className=" text-appBlue cursor-pointer text-lg transition-all duration-300 ease-in-out hover:scale-125" />
+          </div>
+        </div>
+      </div>
+      <div className=" hidden lg:block lg:px-10 xl:px-20  ">
+        <div className=" flex flex-row">
+          <div className=" w-1/2 flex flex-grow items-center justify-between ">
+            <div className=" w-1/3">
+              <Image
+                src="/images/logo1.svg"
+                width={1000}
+                height={1000}
+                alt="Logo"
+              />
+            </div>
+            <p className=" w-1/2  text-lightGray">
+              Helping you maximize operations management with digitization
+            </p>
+          </div>
+          <div className=" w-1/2 flex flex-row justify-between items-center  pl-20">
+            <div>
+              <h1 className=" text-appBlack font-bold text-lg">Office</h1>
+              <p className=" text-lightGray mt-2">359 Hidden Valley Road, NY</p>
             </div>
             <div>
-              <h2 className=" font-bold text-black">Contacts</h2>
-              <h3 className=" text-lightGray mt-3">
+              <h1 className=" text-appBlack font-bold text-lg">Contacts</h1>
+              <p className=" text-lightGray mt-2">
                 (+01) 234 568 contact@monst.com
-              </h3>
+              </p>
             </div>
           </div>
         </div>
-        <div className=" flex justify-between px-8">
-          <span className=" text-lightGray text-[14px] mt-8 tracking-wide">
+        <div className=" flex flex-row justify-between items-center mb-12">
+          <span className=" text-lightGray text-sm">
             © 2022. All rights reserved. Designed by{" "}
-            <span className=" text-appBlue">StarWorld.com</span>
+            <span className=" text-appBlue font-semibold">Alithemes.com</span>
           </span>
-          <div className=" flex gap-5 mt-10">
-            <FaFacebookF className=" text-xl text-appBlue2 cursor-pointer transition-all duration-300 ease-out hover:text-appBlue" />
-            <FaInstagram className=" text-xl text-appBlue2 cursor-pointer transition-all duration-300 ease-out hover:text-appBlue" />
-            <FaTwitter className=" text-xl text-appBlue2 cursor-pointer transition-all duration-300 ease-out hover:text-appBlue" />
+          <div className=" flex flex-row items-center gap-x-5">
+            <FaFacebookF className=" text-appBlue cursor-pointer text-lg transition-all duration-300 ease-in-out hover:scale-125" />
+            <FaInstagram className=" text-appBlue cursor-pointer text-lg transition-all duration-300 ease-in-out hover:scale-125" />
+            <FaTwitter className=" text-appBlue cursor-pointer text-lg transition-all duration-300 ease-in-out hover:scale-125" />
           </div>
         </div>
       </div>

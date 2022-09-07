@@ -19,25 +19,28 @@ import { MdOutlineMailOutline } from "react-icons/md";
 
 const Home = () => {
   return (
-    <div>
-      <div className=" bg-BgShape bg-cover bg-no-repeat flex flex-col items-center pt-10">
-        <h1 className=" font-Poppins text-3xl lg:text-5xl text-appBlack">
+    <div className="">
+      <div className=" bg-BgShape bg-cover bg-no-repeat flex flex-col items-center pt-10 px-2 md:px-6 lg:px-16 ">
+        <h1 className=" font-Poppins text-[1.7rem] md:text-4xl lg:text-5xl text-appBlack">
           Committed to People
         </h1>
-        <h1 className=" font-Poppins text-3xl lg:text-5xl pt-3 flex text-appBlack">
+        <h1 className=" font-Poppins text-[1.7rem] pt-1 md:text-4xl lg:text-5xl md:pt-3 flex text-appBlack">
           Committed <span className=" text-appBlue2 pl-2">to the Future</span>
         </h1>
         <span className=" text-lightGray my-4 lg:my-10">
-          We are <span className=" font-semibold text-appBlue2">StarWorld</span>
+          We are{" "}
+          <span className=" text-sm lg:text-base font-semibold text-appBlue2">
+            StarWorld
+          </span>
         </span>
-        <div className=" flex gap-3 pb-8">
+        {/* <div className=" flex gap-3 pb-8">
           <button className=" bg-appBlue2 hover:-translate-y-0.5 px-6 text-[12px] font-semibold transition-all duration-300 ease-out text-white py-3 rounded-md hover:bg-appBlue">
             Key Features
           </button>
           <button className=" bg-white px-6 hover:-translate-y-0.5 text-[12px] font-semibold transition-all duration-300 ease-out text-blueGray1 py-3 rounded-md hover:bg-white/60">
             How We Works?
           </button>
-        </div>
+        </div> */}
         <div className=" bg-bgPattern bg-cover bg-no-repeat flex items-center justify-center p-4 md:p-6 lg:p-7 xl:p-10 w-full h-full  lg:w-3/4">
           <img
             src="/images/dashboard.png"
@@ -46,8 +49,9 @@ const Home = () => {
         </div>
       </div>
       <Counter />
-      <div className=" flex flex-col lg:flex-row mt-20 px-3 lg:px-1 xl:px-10 ">
-        <div className=" lg:w-2/5 lg:ml-10">
+
+      <div className=" flex flex-col lg:flex-row mt-20 px-2 md:px-6 lg:px-10 xl:px-20  ">
+        <div className=" lg:w-1/2 xl:w-2/5">
           <div className=" mt-16">
             <span className=" bg-blue-100 w-fit px-3 py-1 text-[11px] font-semibold rounded-xl text-appBlue">
               Why choose us
@@ -98,7 +102,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className=" lg:w-3/5 relative flex flex-col items-center">
+        <div className=" lg:w-1/2 xl:w-3/5 relative flex flex-col items-center mt-20">
           <img
             src="/images/blob-tear.svg"
             className=" absolute left-0 top-0 w-1/3 h-1/3"
@@ -113,9 +117,10 @@ const Home = () => {
           />
         </div>
       </div>
-      <div className=" mt-28 px-3 lg:px-20">
+
+      <div className=" mt-20 px-4 md:px-6 lg:px-10 xl:px-20">
         <div className=" lg:flex lg:flex-row lg:items-center">
-          <div className=" flex flex-row md:flex-col lg:w-1/2  font-Poppins text-3xl lg:text-4xl  leading-10">
+          <div className=" flex flex-row md:flex-col lg:w-1/2   font-Poppins text-3xl lg:text-4xl  leading-10">
             <div className=" flex flex-row">
               <h1 className="text-appBlack mr-1">Steps to Place </h1>
               <h1 className=" text-appBlue2"> Order </h1>
@@ -130,7 +135,7 @@ const Home = () => {
             directed to this at every stage of production.
           </p>
         </div>
-        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-8 md:mt-10 gap-y-8 ">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-8 md:mt-10 gap-y-8  ">
           {aboutProject &&
             aboutProject.length > 0 &&
             aboutProject.map((item, index) => (
@@ -152,8 +157,9 @@ const Home = () => {
             ))}
         </div>
       </div>
+
       <div className=" my-20 mt-32">
-        <div className=" flex flex-col lg:flex-row lg:pr-16">
+        <div className=" flex flex-col lg:flex-row lg:pr-6">
           <div className=" flex flex-col items-center lg:pt-20 lg:w-1/2">
             <span className=" font-Poppins text-3xl lg:text-4xl text-appBlack flex flex-row">
               Simple Solution for
@@ -164,7 +170,7 @@ const Home = () => {
                 Connections
               </span>
             </span>
-            <p className=" text-lightGray text-[12px] lg:text-sm my-6 mx-6 text-center">
+            <p className=" text-lightGray text-[12px] lg:text-sm my-6 mx-8  text-center">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
               luctus eget justo et iaculis.
             </p>
@@ -182,17 +188,14 @@ const Home = () => {
                     <Slide index={0} key={index}>
                       <div
                         key={index}
-                        className=" p-9 lg:p-5 rounded-md m-5 lg:m-3 shadow-cardShadow "
+                        className=" p-5 flex flex-col justify-center items-center lg:p-5 rounded-md m-5 lg:m-3 shadow-cardShadow "
                       >
                         <img src={item.img} className=" rounded-xl max-h-56 " />
-                        <div className=" flex flex-row justify-between items-center">
+                        <div className=" flex w-full flex-row justify-between items-center">
                           <div>
                             <h1 className=" font-semibold mt-5 text-xl text-appBlack">
                               {item.title}
                             </h1>
-                            <h2 className=" text-lightGray text-[12px]">
-                              {item.subtext}
-                            </h2>
                           </div>
                           <div className=" flex items-center pt-7">
                             <button className=" transition-all duration-300 ease-in-out hover:bg-appBlue hover:text-white border border-appBlue px-3 rounded-md text-appBlue font-semibold text-[11px] py-2  ">
@@ -216,6 +219,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+
       <div className=" bg-contactBg bg-cover bg-no-repeat flex flex-col items-center justify-center py-40 ">
         <span className=" font-Poppins text-3xl text-appBlack text-center leading-8 w-1/3   ">
           Subscribe now to
@@ -229,7 +233,7 @@ const Home = () => {
         <p className=" text-sm text-lightGray my-6">
           All your information is completely confidential
         </p>
-        <div className=" flex flex-row items-center bg-white px-6 py-4">
+        <div className=" flex flex-col md:flex-row items-center bg-white px-6 py-4 shadow-xl rounded-lg">
           <div className=" flex flex-row items-center bg-[#F1F5F9] px-2 rounded-md">
             <MdOutlineMailOutline className=" text-2xl mx-2" />
             <input
@@ -237,7 +241,7 @@ const Home = () => {
               placeholder="Type your e-mail"
             />
           </div>
-          <button className=" bg-appBlue2 text-white py-3 px-5 ml-5 rounded-md text-sm">
+          <button className=" mt-5 md:mt-0 bg-appBlue2 text-white py-3 px-5 ml-5 rounded-md text-sm font-semibold">
             Send
           </button>
         </div>

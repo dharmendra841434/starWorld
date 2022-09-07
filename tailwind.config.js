@@ -11,6 +11,9 @@ module.exports = {
         Montserrat: ["Montserrat", "sans-serif", "system-ui"],
         Poppins: ["Poppins", "sans-serif", "system-ui"],
       },
+      spacing: {
+        "8xl": "90rem",
+      },
       colors: {
         appBlue: "#3B82F6",
         appBlue2: "#5599E4",

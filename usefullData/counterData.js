@@ -1,13 +1,13 @@
 import { IoIosPeople } from "react-icons/io";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
-import { MdVerified } from "react-icons/md";
+import { MdVerified, MdSettingsSuggest } from "react-icons/md";
 import { TbBulb } from "react-icons/tb";
 
 export const counterData = [
   {
-    title: "Experience",
+    title: " Total Experience",
     totalNumber: 20,
-    icon: <IoIosPeople className=" text-4xl text-appBlue2" />,
+    icon: <MdSettingsSuggest className=" text-5xl text-appBlue2" />,
   },
   {
     title: "Completed Projects",
@@ -22,6 +22,6 @@ export const counterData = [
   {
     title: "Skilled Employees",
     totalNumber: 32,
-    icon: <TbBulb className=" text-4xl text-appBlue2" />,
+    icon: <IoIosPeople className=" text-4xl text-appBlue2" />,
   },
 ];

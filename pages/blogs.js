@@ -5,7 +5,7 @@ import Link from "next/link";
 const Blogs = () => {
   const [hoverItems, setHoverItems] = useState();
   return (
-    <div className=" px-3 xl:px-44">
+    <div className=" px-2 md:px-6 lg:px-10 xl:px-20">
       <h1 className=" text-3xl text-appBlack font-Poppins mt-20">Our Blogs</h1>
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-8">
         {blogData &&
