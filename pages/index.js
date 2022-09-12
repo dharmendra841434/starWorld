@@ -19,6 +19,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import axios from "axios";
 import { getRandomInt } from "../utils/helper";
 import Link from "next/link";
+import Image from "next/image";
 
 const Home = () => {
   const [clientEmail, setClientEmail] = useState("");
@@ -53,7 +54,7 @@ const Home = () => {
           Committed to People
         </h1>
         <h1 className=" font-Poppins text-[1.7rem] pt-1 md:text-4xl lg:text-5xl md:pt-3 flex text-appBlack">
-          Committed <span className=" text-appBlue2 pl-2">to the Future</span>
+          Committed <span className=" text-appBlue2 pl-2">to the Quality</span>
         </h1>
         <span className=" text-lightGray my-4 lg:my-10">
           We are{" "}
@@ -61,23 +62,18 @@ const Home = () => {
             World Star
           </span>
         </span>
-        {/* <div className=" flex gap-3 pb-8">
-          <button className=" bg-appBlue2 hover:-translate-y-0.5 px-6 text-[12px] font-semibold transition-all duration-300 ease-out text-white py-3 rounded-md hover:bg-appBlue">
-            Key Features
-          </button>
-          <button className=" bg-white px-6 hover:-translate-y-0.5 text-[12px] font-semibold transition-all duration-300 ease-out text-blueGray1 py-3 rounded-md hover:bg-white/60">
-            How We Works?
-          </button>
-        </div> */}
-        <div className=" bg-bgPattern bg-cover bg-no-repeat flex items-center justify-center p-4 md:p-6 lg:p-7 xl:p-10 w-full h-full  lg:w-3/4">
-          <img
-            src="/images/dashboard.png"
-            className=" w-3/4 h-3/4 rounded-xl animate-bounce-slow2 xl:animate-bounce-slow "
-          />
+        <div className=" bg-bgPattern  bg-cover bg-no-repeat flex items-center justify-center p-4 md:p-6 lg:p-7 xl:p-10 w-full h-full  lg:w-3/4">
+          <div className="w-4/5 h-3/4 animate-bounce-slow2 xl:animate-bounce-slow  ">
+            <Image
+              width={1000}
+              height={600}
+              src="/images/dashboard.png"
+              className=" w-full h-full  rounded-xl "
+            />
+          </div>
         </div>
       </div>
       <Counter />
-
       <div className=" flex flex-col lg:flex-row mt-20 px-2 md:px-6 lg:px-10 xl:px-20  ">
         <div className=" lg:w-1/2 xl:w-2/5">
           <div className=" mt-16">
@@ -139,29 +135,41 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className=" lg:w-1/2 xl:w-3/5 relative flex flex-col items-center mt-20">
-          <img
-            src="/images/blob-tear.svg"
-            className=" absolute left-0 top-0 w-1/3 h-1/3"
-          />
-          <img
-            src="/images/blob-tear.svg"
-            className="absolute right-0 bottom-0 w-1/3 h-1/3"
-          />
-          <img
-            src="/images/2nd.jpg"
-            className=" my-20 lg:my-16 lg:w-11/12 xl:w-3/5 z-10 xl:my-20 rounded-md animate-bounce-slow"
-          />
+        <div className=" lg:ml-12 lg:w-1/2 xl:w-3/5 relative flex flex-col items-center mt-20">
+          <div className=" absolute left-0 top-0 w-1/4 h-1/4">
+            <Image
+              width={400}
+              height={500}
+              src="/images/blob-tear.svg"
+              className=" w-full h-full"
+            />
+          </div>
+          <div className="absolute right-0 bottom-0 w-1/4 h-1/4">
+            <Image
+              width={400}
+              height={500}
+              src="/images/blob-tear.svg"
+              className=" w-full h-full"
+            />
+          </div>
+          <div className=" my-20 lg:my-16 lg:w-11/12 xl:w-3/5 z-10 xl:my-20 rounded-md animate-bounce-slow">
+            <Image
+              width={650}
+              height={800}
+              src="/images/2nd.jpg"
+              className=" w-full h-full rounded-md "
+            />
+          </div>
         </div>
       </div>
 
       <div className=" mt-20 px-4 md:px-6 lg:px-10 xl:px-20">
         <div className=" lg:flex lg:flex-row lg:items-center">
           <div className=" flex flex-row md:flex-col lg:w-1/3   font-Poppins text-3xl lg:text-4xl  leading-10">
-            <div className="">
+            <div className=" flex flex-col items-center lg:items-start w-full ">
               <h1 className="text-appBlack mr-1">Steps to Place </h1>
 
-              <h1 className=" text-appBlue2 mt-3 ml-14"> Order </h1>
+              <h1 className=" text-appBlue2 mt-3 lg:ml-14"> Order </h1>
             </div>
           </div>
           <p className=" text-lightGray text-justify md:w-4/5 lg:w-full mt-6 leading-8">
@@ -200,15 +208,19 @@ const Home = () => {
         <div className=" flex flex-col lg:flex-row lg:pr-6">
           <div className=" flex flex-col items-center lg:pt-20 lg:w-1/2">
             <span className=" font-Poppins text-3xl lg:text-4xl text-appBlack flex flex-row">
-              Safe and durable choice for all your
+              Safe and durable choice
+            </span>
+
+            <span className=" font-Poppins text-3xl lg:text-4xl text-appBlack flex flex-row">
+              for all your
             </span>
             <span className=" text-appBlue2 font-Poppins text-3xl lg:text-4xl ">
               uPVC doors
               <span className=" font-Poppins text-3xl lg:text-4xl text-appBlack ml-1">
-                and{" "}
-                <span className=" text-appBlue2 font-Poppins text-3xl lg:text-4xl ">
+                and
+                <span className=" text-appBlue2 font-Poppins text-3xl lg:text-4xl mx-1 ">
                   windows
-                </span>{" "}
+                </span>
                 need
               </span>
             </span>

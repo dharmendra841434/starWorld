@@ -44,11 +44,13 @@ const DynamicProduct = (props) => {
             <h1 className=" text-appBlack font-Poppins text-3xl">
               {props.data && props.data.title}
             </h1>
-            <h1 className=" text-third mt-4 flex items-center">
-              Up to <BiRupee className=" text-lg ml-2" />{" "}
-              {props.data && props.data.price}
-            </h1>
-            <div className=" w-full  xl:mt-16">
+            <span className=" text-third mt-4 flex items-center">
+              Up to <BiRupee className=" text-xl ml-2 text-green-500" />{" "}
+              <span className=" text-green-500 font-semibold">
+                {props.data && props.data.price}
+              </span>
+            </span>
+            <div className=" w-full mt-6">
               <h2 className=" text-secoundry mt-3 md:text-sm xl:text-base">
                 {props.data.description}
               </h2>
@@ -101,18 +103,23 @@ const DynamicProduct = (props) => {
               <h1 className=" text-secoundry">{props.data.description}</h1>
             </div>
           )}
-          {additionalInfo && (
-            <div className="py-4 ">
-              <h1 className="flex  py-2 text-secoundry">
-                <p className=" text-gray-800"> Weight : </p>
-                {props.data && props.data.properties[0].weight}
-              </h1>
-              <h1 className="flex py-2 text-secoundry">
-                <p className=" text-gray-800">Dimentions : </p>
-                {props.data && props.data.properties[1].dimentions}
-              </h1>
-            </div>
-          )}
+          {additionalInfo &&
+            props.data.properties.map((one, index) => {
+              console.log(one, "dataOne");
+              return Object.entries(one).map((key, value) => {
+                console.log(key, value, "val");
+                return (
+                  <div className=" flex justify-between items-center px-4 py-2 ">
+                    <div>
+                      <span className=" text-appBlack font-semibold">
+                        {key[0]} :{" "}
+                        <span className=" font-normal">{key[1]}</span>
+                      </span>
+                    </div>
+                  </div>
+                );
+              });
+            })}
         </div>
       </div>
       <div className=" md:hidden">
