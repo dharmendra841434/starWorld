@@ -109,7 +109,10 @@ const DynamicProduct = (props) => {
               return Object.entries(one).map((key, value) => {
                 console.log(key, value, "val");
                 return (
-                  <div className=" flex justify-between items-center px-4 py-2 ">
+                  <div
+                    key={index}
+                    className=" flex justify-between items-center px-4 py-2 "
+                  >
                     <div>
                       <span className=" text-appBlack font-semibold">
                         {key[0]} :{" "}
@@ -184,12 +187,26 @@ const DynamicProduct = (props) => {
               }`}
             />
           </div>
-          {additionalInfo && (
-            <div className=" py-2 text-sm text-lightGray">
-              <h1> Weight : {props.data.properties[0].weight}</h1>
-              <h1> Dimensions : {props.data.properties[1].dimentions}</h1>
-            </div>
-          )}
+          {additionalInfo &&
+            props.data.properties.map((one, index) => {
+              console.log(one, "dataOne");
+              return Object.entries(one).map((key, value) => {
+                console.log(key, value, "val");
+                return (
+                  <div
+                    key={index}
+                    className=" flex justify-between items-center px-4 py-2 "
+                  >
+                    <div>
+                      <span className=" text-appBlack font-semibold">
+                        {key[0]} :{" "}
+                        <span className=" font-normal">{key[1]}</span>
+                      </span>
+                    </div>
+                  </div>
+                );
+              });
+            })}
         </div>
       </div>
     </div>
