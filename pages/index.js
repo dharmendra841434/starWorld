@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Counter from "../components/Counter";
 import { GiNetworkBars } from "react-icons/gi";
 import { RiPieChartLine } from "react-icons/ri";
@@ -16,8 +16,36 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 import { feedback } from "../usefullData/userFeedBack";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
+import axios from "axios";
+import { getRandomInt } from "../utils/helper";
+import Link from "next/link";
 
 const Home = () => {
+  const [clientEmail, setClientEmail] = useState("");
+  const [emailError, setemailError] = useState(false);
+  const [loader, setLoader] = useState(false);
+
+  const subscribe = async () => {
+    if (!clientEmail) {
+      return setemailError(true);
+    }
+    setLoader(true);
+    let id = getRandomInt(375375);
+    console.log(clientEmail, "clientEmail", "client" + id);
+    let data = {
+      email: clientEmail,
+      name: "client" + id,
+      type: "Subscriber ",
+    };
+    let send = await axios.post(
+      `${process.env.NEXT_PUBLIC_BASE_API_URL}/leads`,
+      data
+    );
+    let t = await axios.get("https://api-ws.vercel.app");
+
+    console.log(t, "secound request");
+    console.log(send, "sentdata");
+  };
   return (
     <div className="">
       <div className=" bg-BgShape bg-cover bg-no-repeat flex flex-col items-center pt-10 px-2 md:px-6 lg:px-16 ">
@@ -30,7 +58,7 @@ const Home = () => {
         <span className=" text-lightGray my-4 lg:my-10">
           We are{" "}
           <span className=" text-sm lg:text-base font-semibold text-appBlue2">
-            StarWorld
+            World Star
           </span>
         </span>
         {/* <div className=" flex gap-3 pb-8">
@@ -61,8 +89,11 @@ const Home = () => {
             </h1>
             <div className=" flex flex-col mt-16 gap-y-12 ">
               <div className=" flex flex-row">
-                <VscGraph className=" text-appBlue text-6xl" />
-                <div className=" ml-3">
+                <img
+                  src="/images/clock.svg"
+                  className=" w-[2.5rem] h-[2.5rem] text-appBlue2 "
+                />
+                <div className=" ml-5">
                   <h3 className=" text-xl font-Poppins text-appBlack">
                     Long Lasting upto 15 years
                   </h3>
@@ -75,8 +106,11 @@ const Home = () => {
                 </div>
               </div>
               <div className=" flex flex-row">
-                <RiPieChartLine className=" text-appBlue text-6xl" />
-                <div className=" ml-3">
+                <img
+                  src="/images/shield.svg"
+                  className=" w-[2.5rem] h-[2.5rem] text-appBlue2 "
+                />
+                <div className=" ml-5">
                   <h3 className=" text-xl font-Poppins text-appBlack">
                     100% frost and mold protection
                   </h3>
@@ -87,8 +121,11 @@ const Home = () => {
                 </div>
               </div>
               <div className=" flex flex-row">
-                <BsHandbag className=" text-appBlue text-6xl" />
-                <div className=" ml-3">
+                <img
+                  src="/images/supply.svg"
+                  className=" w-[2.5rem] h-[2.5rem] text-appBlue2 "
+                />
+                <div className=" ml-5">
                   <h3 className=" text-xl font-Poppins text-appBlack">
                     Raw materials and additives
                   </h3>
@@ -120,13 +157,14 @@ const Home = () => {
 
       <div className=" mt-20 px-4 md:px-6 lg:px-10 xl:px-20">
         <div className=" lg:flex lg:flex-row lg:items-center">
-          <div className=" flex flex-row md:flex-col lg:w-1/2   font-Poppins text-3xl lg:text-4xl  leading-10">
-            <div className=" flex flex-row">
+          <div className=" flex flex-row md:flex-col lg:w-1/3   font-Poppins text-3xl lg:text-4xl  leading-10">
+            <div className="">
               <h1 className="text-appBlack mr-1">Steps to Place </h1>
-              <h1 className=" text-appBlue2"> Order </h1>
+
+              <h1 className=" text-appBlue2 mt-3 ml-14"> Order </h1>
             </div>
           </div>
-          <p className=" text-lightGray  text-start md:w-4/5 lg:w-1/2 mt-6 leading-8">
+          <p className=" text-lightGray text-justify md:w-4/5 lg:w-full mt-6 leading-8">
             World Star ,A uPVC door & windows manufacturing company with its
             many years of experience in extrusion, is one of the pioneers in the
             development and production of uPVC windows and doors and aluminum
@@ -162,12 +200,16 @@ const Home = () => {
         <div className=" flex flex-col lg:flex-row lg:pr-6">
           <div className=" flex flex-col items-center lg:pt-20 lg:w-1/2">
             <span className=" font-Poppins text-3xl lg:text-4xl text-appBlack flex flex-row">
-              Simple Solution for
+              Safe and durable choice for all your
             </span>
             <span className=" text-appBlue2 font-Poppins text-3xl lg:text-4xl ">
-              Complex
+              uPVC doors
               <span className=" font-Poppins text-3xl lg:text-4xl text-appBlack ml-1">
-                Connections
+                and{" "}
+                <span className=" text-appBlue2 font-Poppins text-3xl lg:text-4xl ">
+                  windows
+                </span>{" "}
+                need
               </span>
             </span>
             <p className=" text-lightGray text-[12px] lg:text-sm my-6 mx-8  text-center">
@@ -198,9 +240,11 @@ const Home = () => {
                             </h1>
                           </div>
                           <div className=" flex items-center pt-7">
-                            <button className=" transition-all duration-300 ease-in-out hover:bg-appBlue hover:text-white border border-appBlue px-3 rounded-md text-appBlue font-semibold text-[11px] py-2  ">
-                              View details
-                            </button>
+                            <Link href="/products">
+                              <button className=" transition-all duration-300 ease-in-out hover:bg-appBlue hover:text-white border border-appBlue px-3 rounded-md text-appBlue font-semibold text-[11px] py-2  ">
+                                View details
+                              </button>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -228,21 +272,34 @@ const Home = () => {
           Our Newsletter
         </span>
         <span className=" font-Poppins text-3xl text-appBlack text-center">
-          and get the Coupon code.
+          to Keep Yourself Updated
         </span>
         <p className=" text-sm text-lightGray my-6">
           All your information is completely confidential
         </p>
         <div className=" flex flex-col md:flex-row items-center bg-white px-6 py-4 shadow-xl rounded-lg">
-          <div className=" flex flex-row items-center bg-[#F1F5F9] px-2 rounded-md">
+          <div
+            className={`flex flex-row ${
+              emailError ? "border border-red-500" : "border-[#F1F5F9]"
+            } items-center bg-[#F1F5F9] px-2 rounded-md`}
+          >
             <MdOutlineMailOutline className=" text-2xl mx-2" />
             <input
-              className=" outline-none bg-transparent py-3 text-lightGray pl-1 placeholder:text-[12px] placeholder:font-semibold "
+              onChange={(e) => {
+                if (e.target.value.length > 0) {
+                  setemailError(false);
+                }
+                setClientEmail(e.target.value);
+              }}
+              className={`outline-none bg-transparent py-3 text-lightGray pl-1  placeholder:text-[12px] placeholder:font-semibold`}
               placeholder="Type your e-mail"
             />
           </div>
-          <button className=" mt-5 md:mt-0 bg-appBlue2 text-white py-3 px-5 ml-5 rounded-md text-sm font-semibold">
-            Send
+          <button
+            onClick={subscribe}
+            className={` mt-5 md:mt-0 bg-appBlue2  text-white py-3 px-5 ml-5 rounded-md text-sm font-semibold`}
+          >
+            {loader ? "Sending..." : "send"}
           </button>
         </div>
       </div>

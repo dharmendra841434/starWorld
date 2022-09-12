@@ -1,27 +1,30 @@
 import React, { useState } from "react";
-import { blogData } from "../usefullData/blogData";
 import Link from "next/link";
+import axios from "axios";
+import { formateDate, smallString } from "../utils/helper";
 
-const Blogs = () => {
+const Blogs = (props) => {
   const [hoverItems, setHoverItems] = useState();
+
+  // console.log(props.data, "blogs");
   return (
     <div className=" px-2 md:px-6 lg:px-10 xl:px-20">
       <h1 className=" text-3xl text-appBlack font-Poppins mt-20">Our Blogs</h1>
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-8">
-        {blogData &&
-          blogData.length > 0 &&
-          blogData.map((item, index) => (
+        {props.data &&
+          props.data.length > 0 &&
+          props.data.map((item, index) => (
             <div key={index}>
-              <img src={item.image} className=" rounded-lg" />
+              <img src={item.images.url} className=" rounded-lg h-60 w-lg" />
               <div className=" flex flex-row my-3 items-center">
                 <span className=" bg-blue-200 w-fit rounded-md text-[12px] px-2 py-1 text-appBlue font-semibold">
                   {item.category}
                 </span>
                 <p className=" text-lightGray text-[11px] mx-2">
-                  {item.createdAt}
+                  {formateDate(item.createdAt)}
                 </p>
               </div>
-              <Link href={`/blogs/${item.id}`}>
+              <Link href={`/blogs/${item.slug}`}>
                 <h1
                   onMouseOver={() => {
                     setHoverItems(index);
@@ -36,17 +39,29 @@ const Blogs = () => {
                   {item.title}
                 </h1>
               </Link>
-              <p className=" text-lightGray">{item.details}</p>
+              <p className=" text-lightGray">
+                {smallString(item.description, 150)}
+              </p>
             </div>
           ))}
-      </div>
-      <div className=" flex items-center justify-center py-16">
-        <button className=" bg-appBlue2 w-fit text-[12px] transition-all duration-300 ease-in-out hover:-translate-y-1 font-semibold text-white px-6 py-3 rounded-md">
-          Show all Posts
-        </button>
       </div>
     </div>
   );
 };
 
 export default Blogs;
+export async function getStaticProps() {
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_API_URL}/blogs`);
+  const data = await res.data.data;
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+  return {
+    props: {
+      data,
+    },
+    revalidate: 60,
+  };
+}

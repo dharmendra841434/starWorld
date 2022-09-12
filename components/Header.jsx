@@ -9,7 +9,7 @@ const Header = () => {
   // const [first, setfirst] = useState("");
   const path = useRouter();
   const name = path.pathname;
-  console.log(name);
+  // console.log(name);
 
   const [activenavbar, seActivetNavbar] = useState(false);
   const [open, setOpen] = useState(false);
@@ -25,7 +25,7 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", changeBackground);
-    console.log(window.scrollY, "scroll");
+    //console.log(window.scrollY, "scroll");
   }, [activenavbar]);
 
   return (
@@ -103,6 +103,14 @@ const Header = () => {
                     </h3>
                   </Link>
                 ))}
+              <Link href="/contact">
+                <button
+                  onClick={() => setOpen(false)}
+                  className=" my-5 transition-all  duration-300 ease-in-out bg-appBlue2 hover:bg-appBlue  text-white font-semibold text-[14px] px-3 py-2 rounded-md"
+                >
+                  Contact Us
+                </button>
+              </Link>
             </div>
           )}
         </div>
@@ -140,6 +148,14 @@ const Header = () => {
                       </h3>
                     </Link>
                   ))}
+                <Link href="/contact">
+                  <button
+                    onClick={() => setOpen(false)}
+                    className=" my-5 transition-all  duration-300 ease-in-out bg-appBlue2 hover:bg-appBlue  text-white font-semibold text-[14px] px-3 py-2 rounded-md"
+                  >
+                    Contact Us
+                  </button>
+                </Link>
               </div>
             )}
           </div>

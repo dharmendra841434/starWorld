@@ -1,24 +1,36 @@
-/* import { useRouter } from "next/router";
+import axios from "axios";
 import React, { useState } from "react";
-import { blogData } from "../../usefullData/blogData";
+import { formateDate } from "../../utils/helper";
 
 const Dynamic = (props) => {
-  const router = useRouter();
-  const { slug } = router.query;
-  const singleBlog = blogData.filter((item) => item.id == slug);
-  //console.log(singleBlog, "blog");
   return (
     <>
       <div>
-        <div className=" mt-20 lg:mx-44 mx-2 ">
-          <h3 className=" py-5 text-4xl text-gray-800 font-bold">
-            {singleBlog && singleBlog[0].title} 
+        <div className=" mt-10  mx-20 ">
+          <h3 className=" py-2 text-4xl text-gray-800 font-bold">
+            {props.data.title}
           </h3>
+          <div className=" flex flex-row">
+            <span className=" bg-blue-200  w-fit rounded-md text-[12px] px-2 py-1 text-appBlue font-semibold">
+              {props.data.category}
+            </span>
+            <h4 className=" text-sm text-lightGray ml-4">
+              {formateDate(props.data.createdAt)}
+            </h4>
+          </div>
           <img
-            src={singleBlog && singleBlog[0].image}
-            className=" lg:max-w-xl lg:max-h-fit lg:object-cover "
+            src={props.data.images.url}
+            className=" w-full h-96 rounded-md mt-3"
             alt="single-blog"
           />
+          <div className=" flex flex-row mt-10">
+            <p className="  text-2xl mb-3 ml-2 font-semibold">
+              {props.data.description.charAt(0)}
+            </p>
+            <p className="  tracking-wider mt-1.5 text-justify">
+              {props.data.description.slice(1)}
+            </p>
+          </div>
         </div>
       </div>
     </>
@@ -27,7 +39,7 @@ const Dynamic = (props) => {
 
 export default Dynamic;
 
- export async function getStaticPaths() {
+export async function getStaticPaths() {
   // Call an external API endpoint to get posts
 
   const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_API_URL}/blogs`);
@@ -49,13 +61,4 @@ export async function getStaticProps({ params }) {
   return {
     props: { data },
   };
-} 
- */
-
-import React from "react";
-
-const DynamicBlog = () => {
-  return <div>DynamicBlog</div>;
-};
-
-export default DynamicBlog;
+}

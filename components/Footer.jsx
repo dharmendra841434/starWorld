@@ -74,7 +74,7 @@ const Footer = () => {
         <div className=" flex flex-row justify-between items-center mb-12">
           <span className=" text-lightGray text-sm">
             © 2022. All rights reserved. Designed by{" "}
-            <span className=" text-appBlue font-semibold">Alithemes.com</span>
+            {/*   <span className=" text-appBlue font-semibold">Alithemes.com</span> */}
           </span>
           <div className=" flex flex-row items-center gap-x-5">
             <FaFacebookF className=" text-appBlue cursor-pointer text-lg transition-all duration-300 ease-in-out hover:scale-125" />

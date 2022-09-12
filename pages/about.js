@@ -11,18 +11,19 @@ const About = () => {
           </h1>
           <div className=" w-full lg:px-56">
             <p className=" text-lightGray  py-3 text-justify  ">
-              Doorbase fire protection company now emerged as one of renowned
-              Brand in the Market in the field of Doors and Architectural
-              Hardware. We have started our Business with A Firm Named Dhiman
-              Wood Traders in 1991. Our Director Mr. Anoop Dhiman Joined
-              business with his father Mr.Balbir Singh Dhiman after completing
-              his MBA and decided to start manufacturing Fire Doors and
-              Architectural Hardware, After seeing the strict changes by
-              government in fire and safety some regulatory bodies has emerged
-              such as the National Building Code has given its code of conduct
-              to strictly follow the needs of NBC for the Same. Now We are one
-              of leading manufacturing unit with well equipped high-tech
-              machines for Metal doors, Fire Resistance Doors and hardware.
+              Windows and doors are essential for keeping a home cool, clean and
+              secure. People choose which type of window and door to install in
+              their homes based on their needs and preferences. Cool, clean air
+              flows into your home from outside while secure closures keep out
+              unwanted elements. Installing new windows and doors can make your
+              home more inviting and secure, depending on the types of choices
+              you make. From last 20 years we are renowned in business of
+              aluminum and door industry in Panipat (Haryana) India, We serving
+              our clients with trust and with our every sales we have improved
+              our services. We use excellent quality raw material in
+              manufacturing for all your uPVC needs. We believe that trust can
+              be build by completing our commitments without compromising
+              quality
             </p>
             <div className=" mt-10 ">
               <div className=" space-y-6">
@@ -30,7 +31,7 @@ const About = () => {
                   Top trends
                 </h1>
                 <img
-                  src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  src="https://www.thespruce.com/thmb/FDEqR2l_ngcruUD9IyCc6EmXNCo=/1821x1366/smart/filters:no_upscale()/front-door-sizes-5093450-hero-ac5961d7394848d9ab0d473b84498f11.jpg"
                   className="  h-[27rem] w-full rounded-2xl "
                 />
               </div>
@@ -102,16 +103,6 @@ const About = () => {
               </div>
             </div>
             <div className=" py-10 pb-20 ">
-              <div className=" space-y-6">
-                <h1 className=" text-xl text-gray-800  font-bold   ">
-                  Produced with care
-                </h1>
-                <img
-                  src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  className="  h-[27rem] w-full rounded-2xl "
-                  alt=""
-                />
-              </div>
               <p className=" text-lightGray  py-3  ">
                 Duis rutrum dictum libero quis rutrum. Etiam sed neque aliquam,
                 sollicitudin ante a, gravida arcu. Nam fringilla molestie velit,

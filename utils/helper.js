@@ -9,7 +9,7 @@ export const formateDate = (date) => {
 
 export const smallString = (str, num) => {
   if (str.length > num) {
-    return str.slice(0, num) + "...";
+    return str && str.slice(0, num) + "...";
   } else {
     return str;
   }
@@ -29,3 +29,7 @@ export const calculatePrice = (array, setPrice) => {
   );
   setPrice(totalPrice);
 };
+
+export function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}

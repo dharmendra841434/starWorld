@@ -1,19 +1,19 @@
 export const aboutProject = [
   {
-    title: "Browse Our Products",
-    subText: "We produce doors and windows based on customer specifications.",
-    image: "/images/eating.svg",
+    title: "Provide specifications",
+    subText: "Give specifics about the products you require.",
+    image: "/images/specification.svg",
   },
   {
-    title: "Project planning",
+    title: "Get Price Quotation",
     subText:
-      "A project plan is essential to keep everything related to the project organized, methodical, and on track.",
-    image: "/images/space.svg",
+      "Upon receiving your list of required products, we will send you a quotation",
+    image: "/images/quatation.svg",
   },
   {
-    title: "Project organization",
+    title: "Deliver & Install",
     subText:
-      "Moving forward you will be able to keep yourself and your team on track, and address challenges early.",
-    image: "/images/tasks.svg",
+      "After receiving payment, we'll deliver the item and dispatch a team to the installation.",
+    image: "/images/install.svg",
   },
 ];
