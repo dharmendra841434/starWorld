@@ -6,8 +6,8 @@ const Dynamic = (props) => {
   return (
     <>
       <div>
-        <div className=" mt-10  mx-20 ">
-          <h3 className=" py-2 text-4xl text-gray-800 font-bold">
+        <div className=" mt-10 mx-3  lg:mx-20 ">
+          <h3 className=" py-2 text-3xl lg:text-4xl text-gray-800 font-bold">
             {props.data.title}
           </h3>
           <div className=" flex flex-row">
@@ -24,7 +24,7 @@ const Dynamic = (props) => {
             alt="single-blog"
           />
           <div className=" flex flex-row mt-10">
-            <p className="  text-2xl mb-3 ml-2 font-semibold">
+            <p className="  text-2xl mb-3 lg:ml-2 font-semibold">
               {props.data.description.charAt(0)}
             </p>
             <p className="  tracking-wider mt-1.5 text-justify">
